@@ -18,10 +18,12 @@ export const ContactForm = () => {
     switch (name) {
       case 'name':
         setName(value);
+        localStorage.setItem("name", `${value}`);
         break;
 
       case 'number':
         setNumber(value);
+        localStorage.setItem("number", `${value}`);
         break;
 
       default:
@@ -88,6 +90,7 @@ export const ContactForm = () => {
           Add contact
         </button>
       </form>
+      
     </div>
   );
 };

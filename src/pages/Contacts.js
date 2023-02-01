@@ -27,8 +27,7 @@ export default function App() {
       </Helmet>
 
       <ContactForm/>
-
-      <div>
+<div>
         <h2 className={css.filter}>Filter</h2>
           <Filter/>
         <h2 className={css.contacts}>Contacts</h2>
@@ -38,6 +37,11 @@ export default function App() {
           <ContactItem />
         </ContactList>
       </div>
+
+      
+
+      
+    
     </div>
   );
 };

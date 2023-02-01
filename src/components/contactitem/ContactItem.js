@@ -2,14 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactItem.module.css';
 import { useDispatch } from 'react-redux';
-import { deleteContacts } from 'redux/contacts/operations';
+import { deleteContacts, changeContacts } from 'redux/contacts/operations';
 
 export const ContactItem = ({ contact }) => {
   const dispatch = useDispatch();
+
+const handleChangeContact = () => {
+
+  dispatch(changeContacts(contact.id));
+  localStorage.removeItem("name");
+  localStorage.removeItem("number");
+}
+
+
   return (
     <li className={css.contact__item} key={contact.id}>
       <span className={css.contact__name}>{contact.name}</span>
       <span className={css.contact__number}>{contact.number}</span>
+      <div className={css.contact_button_wrapper}>
       <button
         className={css.contact__button}
         type="button"
@@ -17,6 +27,16 @@ export const ContactItem = ({ contact }) => {
       >
         Delete
       </button>
+      <button
+        className={css.contact__button}
+        type="button"
+        onClick={handleChangeContact}
+      >
+        Change
+      </button>
+
+      </div>
+     
     </li>
   );
 };
