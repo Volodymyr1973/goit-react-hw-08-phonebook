@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/contacts/operations';
 import { useState } from 'react';
 import { getContacts } from 'redux/contacts/selectors';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactForm = () => {
   const contacts = useSelector(getContacts);
@@ -46,10 +48,15 @@ export const ContactForm = () => {
     );
 
     if (doubleContact) {
-      alert(`${name} is already in contacts`);
+      // alert(`${name} is already in contacts`);
+      toast.error(`${name} is already in contacts`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       reset();
       return;
     } else dispatch(addContacts(contact));
+    localStorage.removeItem('name');
+    localStorage.removeItem('number');
     reset();
   };
 
