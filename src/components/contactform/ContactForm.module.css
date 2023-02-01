@@ -38,7 +38,7 @@
 .input__number:hover,
 .input__name:focus,
 .input__number:focus {
-  border-color: blue;
+  border-color:cornflowerblue;
 }
 
 .form__button {
@@ -49,5 +49,5 @@
 
 .form__button:hover {
   color: white;
-  background-color: blue;
+  background-color: cornflowerblue;
 }

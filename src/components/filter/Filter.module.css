@@ -17,5 +17,5 @@ justify-content: center;
 
 .filter__input:hover,
 .filter__input:focus {
-  border-color: blue;
+  border-color: cornflowerblue;
 }

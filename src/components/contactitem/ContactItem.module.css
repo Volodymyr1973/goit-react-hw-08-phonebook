@@ -11,6 +11,8 @@
   padding: 5px;
   
 }
+  
+
 
 .contact__name {
   margin-bottom: 5px;
@@ -31,5 +33,5 @@ margin: 0 auto;
 
 .contact__button:hover {
   color: white;
-  background-color: blue;
+  background-color: cornflowerblue;
 }
