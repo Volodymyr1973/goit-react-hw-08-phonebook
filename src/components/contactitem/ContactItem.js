@@ -12,7 +12,6 @@ export const ContactItem = ({ contact }) => {
   const contacts = useSelector(getContacts);
 
   const handleChangeContact = event => {
-    console.log(event);
     const storageName = localStorage.getItem('name');
     const storageNumber = localStorage.getItem('number');
     const doubleContact = contacts.some(

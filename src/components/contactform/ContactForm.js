@@ -11,14 +11,9 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  console.log(contacts);
-  console.log(name);
-  console.log(number);
 
   const handleChange = event => {
     const { name, value } = event.target;
-    console.log(event.target.name);
-    console.log(event.target.number);
 
     switch (name) {
       case 'name':
