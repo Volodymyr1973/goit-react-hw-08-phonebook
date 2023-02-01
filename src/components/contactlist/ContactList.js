@@ -16,7 +16,7 @@ export const ContactList = () => {
     contact.name.toLowerCase().includes(filters.toLowerCase())
   );
 
-console.log(`contacts${visibleContacts}`)
+// console.log(`contacts${visibleContacts}`)
 
   return (
     <>

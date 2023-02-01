@@ -9,21 +9,24 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  console.log(contacts)
-  console.log(name)
-  console.log(number)
+  console.log(contacts);
+  console.log(name);
+  console.log(number);
 
   const handleChange = event => {
     const { name, value } = event.target;
+    console.log(event.target.name);
+    console.log(event.target.number);
+
     switch (name) {
       case 'name':
         setName(value);
-        localStorage.setItem("name", `${value}`);
+        localStorage.setItem('name', `${value}`);
         break;
 
       case 'number':
         setNumber(value);
-        localStorage.setItem("number", `${value}`);
+        localStorage.setItem('number', `${value}`);
         break;
 
       default:
@@ -46,8 +49,7 @@ export const ContactForm = () => {
       alert(`${name} is already in contacts`);
       reset();
       return;
-    } else 
-    dispatch(addContacts(contact));
+    } else dispatch(addContacts(contact));
     reset();
   };
 
@@ -55,7 +57,7 @@ export const ContactForm = () => {
     setName('');
     setNumber('');
   };
-  
+
   return (
     <div className={css.form__wrapper}>
       <h1 className={css.form__title}>Phonebook</h1>
@@ -90,9 +92,6 @@ export const ContactForm = () => {
           Add contact
         </button>
       </form>
-      
     </div>
   );
 };
-
-
